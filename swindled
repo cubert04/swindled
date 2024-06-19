@@ -1,3 +1,4 @@
+print("beta1")
 --LOL HACKED!
 --development successful
 
@@ -102,21 +103,21 @@ local function KRCT_fake_script() -- ScreenGui.LocalScript
 	local script = Instance.new('LocalScript', ScreenGui)
 
 	wait(1)
-	
+
 	local x = 0.6
 	local y = -50
 	remotes = {}
-	
+
 	for i,remote in game:GetDescendants() do
 		if remote:IsA("BaseRemoteEvent") or remote:IsA("RemoteFunction") then
 			table.insert(remotes,remote)
 		end
 	end
-	
+
 	table.sort(remotes, function(a,b)
 		return a.Name < b.Name
 	end)
-	
+
 	for i,remote in remotes do
 		local button = script.Parent.TextButton:Clone()
 		local object = Instance.new("ObjectValue")
@@ -146,30 +147,9 @@ end
 coroutine.wrap(XXQUQ_fake_script)()
 local function BPUVR_fake_script() -- ScreenGui.Click 
 	local script = Instance.new('LocalScript', ScreenGui)
-
+	
 	wait(2)
-	
-	local function GetInstance(String)
-		local Table = string.split(String, ".")
-		local Service = game:GetService(Table[1])
-	
-		local ObjectSoFar = Service
-		for Index, Value in pairs(Table) do
-			if Index ~= 1 then -- Don't run over the service.
-				local Object = ObjectSoFar:FindFirstChild(Value)
-				if Object then
-					ObjectSoFar = Object
-				else
-					break
-				end
-			end
-		end
-	
-		return (ObjectSoFar ~= Service and ObjectSoFar) or nil
-	end
-	
-	local Baseplate = GetInstance("Workspace.Baseplate")
-	
+
 	function csvToTable(list)
 		local out = {}
 		for entry in string.gmatch(list, "[^,]+") do
@@ -177,7 +157,7 @@ local function BPUVR_fake_script() -- ScreenGui.Click
 			local success, service = pcall(function()
 				return game:GetService(Table[1])
 			end)
-	
+
 			if success then
 				Service = game:GetService(Table[1])
 				local ObjectSoFar = Service
@@ -191,20 +171,20 @@ local function BPUVR_fake_script() -- ScreenGui.Click
 						end
 					end
 				end
-	
+
 				entry = (ObjectSoFar ~= Service and ObjectSoFar) or nil
 			end
-	
+
 			table.insert(out, entry)
 		end
 		return out
 	end
-	
+
 	function onButtonClicked(button)
 		local list = button.Parent.Parent.TextBox.Text
-	
+
 		local tab = csvToTable(list)
-	
+
 		local remote = button.Value.Value
 		if remote:IsA("BaseRemoteEvent") and button.Name == remote.Name then
 			remote:FireServer(unpack(tab))
@@ -212,7 +192,7 @@ local function BPUVR_fake_script() -- ScreenGui.Click
 			remote:InvokeServer(unpack(tab))
 		end
 	end
-	
+
 	for i,button in script.Parent.Frame.ScrollingFrame:GetChildren() do
 		button.MouseButton1Down:connect(function ()
 			onButtonClicked(button)
