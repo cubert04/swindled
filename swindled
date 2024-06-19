@@ -142,6 +142,9 @@ end
 coroutine.wrap(RHHQWN_fake_script)()
 local function LYYQCE_fake_script()
 	local script = Instance.new('LocalScript', ScreenGui)
+	if script.Parent == ScreenGui then
+		script.Disabled = true
+	end
 
 	function csvToTable(list)
 		local out = {}
