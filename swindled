@@ -1,4 +1,4 @@
-print("beta1")
+print("instance test1")
 --LOL HACKED!
 --development successful
 
@@ -158,7 +158,7 @@ local function BPUVR_fake_script() -- ScreenGui.Click
 				return game:GetService(Table[1])
 			end)
 
-			if success then
+			if success ~= nil then
 				Service = game:GetService(Table[1])
 				local ObjectSoFar = Service
 				for Index, Value in pairs(Table) do
