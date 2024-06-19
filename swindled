@@ -105,7 +105,7 @@ local function BPYZY_fake_script()
 	remotes = {}
 	
 	for i,remote in game:GetDescendants() do
-		if remote:IsA("BaseRemoteEvent") or remote:IsA("RemoteFunction") then
+		if remote:IsA("BaseRemoteEvent") then
 			table.insert(remotes,remote)
 		end
 	end
@@ -159,7 +159,7 @@ local function QPJJ_fake_script()
 		local tab = csvToTable(list)
 	
 		local remote = button.Value.Value
-		if remote:IsA("BaseRemoteEvent") or remote:IsA("RemoteFunction") and button.Name == remote.Name then
+		if remote:IsA("BaseRemoteEvent") and button.Name == remote.Name then
 			remote:FireServer(unpack(tab))
 		end
 	end
