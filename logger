@@ -220,7 +220,7 @@ local httpsservice = game:GetService("HttpService")
 task.wait(2) -- server loads fully
 
 
-local getasyncinfo = httprequest(url) -- roblox server will get info from that link, this will be in JSON format
+local getasyncinfo = game:HttpGet(url) -- roblox server will get info from that link, this will be in JSON format
 local decodedinfo = httpsservice:JSONDecode(getasyncinfo) -- make the table into lua table, so its easy to read it
 
 local data = httpsservice:JSONEncode(decodedinfo)
