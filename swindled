@@ -93,8 +93,9 @@ TextButton.Visible = false
 TextButton.Font = Enum.Font.SourceSans
 TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
 TextButton.TextSize = 14.000
+TextButton.TextWrapped = true
 
-local function PNYYC_fake_script()
+local function BPYZY_fake_script()
 	local script = Instance.new('LocalScript', ScreenGui)
 
 	wait(1)
@@ -131,16 +132,16 @@ local function PNYYC_fake_script()
 		object.Value = remote
 	end
 end
-coroutine.wrap(PNYYC_fake_script)()
-local function VBEWP_fake_script()
+coroutine.wrap(BPYZY_fake_script)()
+local function JNBMNQ_fake_script()
 	local script = Instance.new('LocalScript', ScreenGui)
 
 	while wait(5) do
 		script.Parent.Frame.Ping.Text = "Incoming ping: "..math.round(game.Players.LocalPlayer:GetNetworkPing()*1000)
 	end
 end
-coroutine.wrap(VBEWP_fake_script)()
-local function FAFIUSD_fake_script()
+coroutine.wrap(JNBMNQ_fake_script)()
+local function QPJJ_fake_script()
 	local script = Instance.new('LocalScript', ScreenGui)
 
 	wait(6)
@@ -169,4 +170,4 @@ local function FAFIUSD_fake_script()
 		end)
 	end
 end
-coroutine.wrap(FAFIUSD_fake_script)()
+coroutine.wrap(QPJJ_fake_script)()
