@@ -1,3 +1,6 @@
+--LOL HACKED!
+--developer successful
+
 local ScreenGui = Instance.new("ScreenGui")
 local Frame = Instance.new("Frame")
 local ScrollingFrame = Instance.new("ScrollingFrame")
@@ -91,10 +94,10 @@ TextButton.Font = Enum.Font.SourceSans
 TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
 TextButton.TextSize = 14.000
 
-local function BPFO_fake_script()
+local function PNYYC_fake_script()
 	local script = Instance.new('LocalScript', ScreenGui)
 
-	wait(5)
+	wait(1)
 	
 	local x = 0.6
 	local y = -50
@@ -113,12 +116,9 @@ local function BPFO_fake_script()
 	for i,remote in remotes do
 		local button = script.Parent.TextButton:Clone()
 		local object = Instance.new("ObjectValue")
-		local click = script.Parent.TextButton.Click:Clone()
 		button.Parent = script.Parent.Frame.ScrollingFrame
 		object.Parent = button
-		click.Parent = button
 		button.Visible = true
-		click.Enabled = true
 		if x == 0.6 then
 			y += 50
 			x = 0.1
@@ -131,10 +131,19 @@ local function BPFO_fake_script()
 		object.Value = remote
 	end
 end
-coroutine.wrap(BPFO_fake_script)()
-local function VFXQF_fake_script()
-	local script = Instance.new('LocalScript', TextButton)
+coroutine.wrap(PNYYC_fake_script)()
+local function VBEWP_fake_script()
+	local script = Instance.new('LocalScript', ScreenGui)
 
+	while wait(5) do
+		script.Parent.Frame.Ping.Text = "Incoming ping: "..math.round(game.Players.LocalPlayer:GetNetworkPing()*1000)
+	end
+end
+coroutine.wrap(VBEWP_fake_script)()
+local function FAFIUSD_fake_script()
+	local script = Instance.new('LocalScript', ScreenGui)
+
+	wait(6)
 	function csvToTable(list)
 		local out = {}
 		for entry in string.gmatch(list, "[^,]+") do
@@ -143,27 +152,21 @@ local function VFXQF_fake_script()
 		return out
 	end
 	
-	function onButtonClicked()
-		local list = script.Parent.Parent.Parent.TextBox.Text
+	function onButtonClicked(button)
+		local list = button.Parent.Parent.TextBox.Text
 	
 		local tab = csvToTable(list)
 	
-		local remote = script.Parent.Value.Value
-		if remote:IsA("BaseRemoteEvent") or remote:IsA("RemoteFunction") and script.Parent.Name == remote.Name then
+		local remote = button.Value.Value
+		if remote:IsA("BaseRemoteEvent") or remote:IsA("RemoteFunction") and button.Name == remote.Name then
 			remote:FireServer(unpack(tab))
 		end
 	end
 	
-	script.Parent.MouseButton1Down:connect(function ()
-		onButtonClicked()
-	end)
-end
-coroutine.wrap(VFXQF_fake_script)()
-local function TJNOIBW_fake_script()
-	local script = Instance.new('LocalScript', ScreenGui)
-
-	while wait(5) do
-		script.Parent.Frame.Ping.Text = "Incoming ping: "..math.round(game.Players.LocalPlayer:GetNetworkPing()*1000)
+	for i,button in script.Parent.Frame.ScrollingFrame:GetChildren() do
+		button.MouseButton1Down:connect(function ()
+			onButtonClicked(button)
+		end)
 	end
 end
-coroutine.wrap(TJNOIBW_fake_script)()
+coroutine.wrap(FAFIUSD_fake_script)()
