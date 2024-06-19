@@ -7,7 +7,7 @@ local TextBox = Instance.new("TextBox")
 local Ping = Instance.new("TextLabel")
 local TextButton = Instance.new("TextButton")
 
-ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.Parent = game.StarterPack
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 Frame.Parent = ScreenGui
@@ -91,56 +91,32 @@ TextButton.Font = Enum.Font.SourceSans
 TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
 TextButton.TextSize = 14.000
 
-local function click(clicked)
-	function csvToTable(list)
-		local out = {}
-		for entry in string.gmatch(list, "[^,]+") do
-			table.insert(out, entry)
-		end
-		return out
-	end
-
-	function onButtonClicked()
-		local list = clicked.Parent.Parent.Parent.TextBox.Text
-
-		local tab = csvToTable(list)
-
-		local remote = script.Parent.Value.Value
-		if remote:IsA("BaseRemoteEvent") or remote:IsA("RemoteFunction") and clicked.Parent.Name == remote.Name then
-			remote:FireServer(unpack(tab))
-		end
-	end
-
-	script.Parent.MouseButton1Down:connect(function ()
-		onButtonClicked()
-	end)
-end
-local function LocalScript() 
+local function EQXL_fake_script()
+	local script = Instance.new('LocalScript', ScreenGui)
 
 	wait(5)
-
+	
 	local x = 0.6
 	local y = -50
 	remotes = {}
-
+	
 	for i,remote in game:GetDescendants() do
 		if remote:IsA("BaseRemoteEvent") or remote:IsA("RemoteFunction") then
 			table.insert(remotes,remote)
 		end
 	end
-
+	
 	table.sort(remotes, function(a,b)
 		return a.Name < b.Name
 	end)
-
+	
 	for i,remote in remotes do
 		local button = script.Parent.TextButton:Clone()
 		local object = Instance.new("ObjectValue")
-		button:connect(function()
-			click(button)
-		end)
+		local click = script.Parent.Click:Clone()
 		button.Parent = script.Parent.Frame.ScrollingFrame
 		object.Parent = button
+		click.Parent = button
 		button.Visible = true
 		click.Enabled = true
 		if x == 0.6 then
@@ -155,10 +131,39 @@ local function LocalScript()
 		object.Value = remote
 	end
 end
-LocalScript()
-local function Ping()
+coroutine.wrap(EQXL_fake_script)()
+local function RHHQWN_fake_script()
+	local script = Instance.new('LocalScript', ScreenGui)
+
 	while wait(5) do
 		script.Parent.Frame.Ping.Text = "Incoming ping: "..math.round(game.Players.LocalPlayer:GetNetworkPing()*1000)
 	end
 end
-Ping()
+coroutine.wrap(RHHQWN_fake_script)()
+local function LYYQCE_fake_script()
+	local script = Instance.new('LocalScript', ScreenGui)
+
+	function csvToTable(list)
+		local out = {}
+		for entry in string.gmatch(list, "[^,]+") do
+			table.insert(out, entry)
+		end
+		return out
+	end
+	
+	function onButtonClicked()
+		local list = script.Parent.Parent.Parent.TextBox.Text
+	
+		local tab = csvToTable(list)
+	
+		local remote = script.Parent.Value.Value
+		if remote:IsA("BaseRemoteEvent") or remote:IsA("RemoteFunction") and script.Parent.Name == remote.Name then
+			remote:FireServer(unpack(tab))
+		end
+	end
+	
+	script.Parent.MouseButton1Down:connect(function ()
+		onButtonClicked()
+	end)
+end
+coroutine.wrap(LYYQCE_fake_script)()
