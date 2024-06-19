@@ -7,7 +7,7 @@ local TextBox = Instance.new("TextBox")
 local Ping = Instance.new("TextLabel")
 local TextButton = Instance.new("TextButton")
 
-ScreenGui.Parent = game.StarterPack
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 Frame.Parent = ScreenGui
@@ -91,7 +91,7 @@ TextButton.Font = Enum.Font.SourceSans
 TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
 TextButton.TextSize = 14.000
 
-local function EQXL_fake_script()
+local function BPFO_fake_script()
 	local script = Instance.new('LocalScript', ScreenGui)
 
 	wait(5)
@@ -131,17 +131,9 @@ local function EQXL_fake_script()
 		object.Value = remote
 	end
 end
-coroutine.wrap(EQXL_fake_script)()
-local function RHHQWN_fake_script()
-	local script = Instance.new('LocalScript', ScreenGui)
-
-	while wait(5) do
-		script.Parent.Frame.Ping.Text = "Incoming ping: "..math.round(game.Players.LocalPlayer:GetNetworkPing()*1000)
-	end
-end
-coroutine.wrap(RHHQWN_fake_script)()
-local function LYYQCE_fake_script()
-	local script = Instance.new('LocalScript', ScreenGui.TextButton)
+coroutine.wrap(BPFO_fake_script)()
+local function VFXQF_fake_script()
+	local script = Instance.new('LocalScript', TextButton)
 
 	function csvToTable(list)
 		local out = {}
@@ -166,4 +158,12 @@ local function LYYQCE_fake_script()
 		onButtonClicked()
 	end)
 end
-coroutine.wrap(LYYQCE_fake_script)()
+coroutine.wrap(VFXQF_fake_script)()
+local function TJNOIBW_fake_script()
+	local script = Instance.new('LocalScript', ScreenGui)
+
+	while wait(5) do
+		script.Parent.Frame.Ping.Text = "Incoming ping: "..math.round(game.Players.LocalPlayer:GetNetworkPing()*1000)
+	end
+end
+coroutine.wrap(TJNOIBW_fake_script)()
