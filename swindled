@@ -1,4 +1,4 @@
-print("instance test1")
+print("instance test2")
 --LOL HACKED!
 --development successful
 
@@ -154,26 +154,21 @@ local function BPUVR_fake_script() -- ScreenGui.Click
 		local out = {}
 		for entry in string.gmatch(list, "[^,]+") do
 			local Table = string.split(entry, ".")
-			local success, service = pcall(function()
-				return game:GetService(Table[1])
-			end)
-
-			if success ~= nil then
-				Service = game:GetService(Table[1])
-				local ObjectSoFar = Service
-				for Index, Value in pairs(Table) do
-					if Index ~= 1 then -- Don't run over the service.
-						local Object = ObjectSoFar:FindFirstChild(Value)
-						if Object then
-							ObjectSoFar = Object
-						else
-							break
-						end
+		
+			for Index, Value in pairs(Table) do
+				if Index ~= 1 then -- Don't run over the service.
+					local Object = ObjectSoFar:FindFirstChild(Value)
+					if Object then
+						ObjectSoFar = Object
+					else
+						break
 					end
 				end
-
+			end
+			if ObjectSoFar ~= nil then
 				entry = (ObjectSoFar ~= Service and ObjectSoFar) or nil
 			end
+		end
 
 			table.insert(out, entry)
 		end
