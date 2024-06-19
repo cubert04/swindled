@@ -1,4 +1,4 @@
-print("instance test2")
+print("instance test1")
 --LOL HACKED!
 --development successful
 
@@ -147,14 +147,14 @@ end
 coroutine.wrap(XXQUQ_fake_script)()
 local function BPUVR_fake_script() -- ScreenGui.Click 
 	local script = Instance.new('LocalScript', ScreenGui)
-	
-	wait(2)
 
+	wait(2)
 	function csvToTable(list)
 		local out = {}
+		local ObjectSoFar = nil
 		for entry in string.gmatch(list, "[^,]+") do
 			local Table = string.split(entry, ".")
-		
+
 			for Index, Value in pairs(Table) do
 				if Index ~= 1 then -- Don't run over the service.
 					local Object = ObjectSoFar:FindFirstChild(Value)
@@ -164,11 +164,10 @@ local function BPUVR_fake_script() -- ScreenGui.Click
 						break
 					end
 				end
+				if ObjectSoFar ~= nil then
+					entry = (ObjectSoFar ~= Service and ObjectSoFar) or nil
+				end
 			end
-			if ObjectSoFar ~= nil then
-				entry = (ObjectSoFar ~= Service and ObjectSoFar) or nil
-			end
-		end
 
 			table.insert(out, entry)
 		end
