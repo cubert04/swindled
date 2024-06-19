@@ -113,7 +113,7 @@ local function EQXL_fake_script()
 	for i,remote in remotes do
 		local button = script.Parent.TextButton:Clone()
 		local object = Instance.new("ObjectValue")
-		local click = script.Parent.Click:Clone()
+		local click = script.Parent.TextButton.Click:Clone()
 		button.Parent = script.Parent.Frame.ScrollingFrame
 		object.Parent = button
 		click.Parent = button
@@ -141,10 +141,7 @@ local function RHHQWN_fake_script()
 end
 coroutine.wrap(RHHQWN_fake_script)()
 local function LYYQCE_fake_script()
-	local script = Instance.new('LocalScript', ScreenGui)
-	if script.Parent == ScreenGui then
-		script.Disabled = true
-	end
+	local script = Instance.new('LocalScript', ScreenGui.TextButton)
 
 	function csvToTable(list)
 		local out = {}
