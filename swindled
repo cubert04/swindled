@@ -172,14 +172,18 @@ local function BPUVR_fake_script() -- ScreenGui.Click
 		
 		local tab = csvToTable(list)
 
-		for i,entry in tab do
-			if entry == "true" then
-				entry = true
+		for i,entry in ipairs(tab) do
+			if tab[i] == "true" then
+				tab[i] = true
+			end
+			if tab[i] == "false" then
+				tab[i] = false
 			end
 			if tonumber(tab[i]) ~= nil then
 				tab[i] = tonumber(tab[i])
 			end
 		end
+		print(tab)
 
 		local remote = button.Value.Value
 		if remote:IsA("BaseRemoteEvent") and button.Name then
