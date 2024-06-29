@@ -174,7 +174,6 @@ local function BPUVR_fake_script() -- ScreenGui.Click
 		local tab = csvToTable(list)
 
 		for i,entry in ipairs(tab) do
-			print(entry)
 			if tab[i] == "true" then
 				tab[i] = true
 			end
@@ -184,6 +183,7 @@ local function BPUVR_fake_script() -- ScreenGui.Click
 			if tonumber(tab[i]) ~= nil then
 				tab[i] = tonumber(tab[i])
 			end
+			print(entry)
 		end
 
 		local remote = button.Value.Value
