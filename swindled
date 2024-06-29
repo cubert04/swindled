@@ -212,8 +212,8 @@ local function GZGUU_fake_script() -- ScreenGui.Click
 			if entry == "true" then
 				entry = true
 			end
-			if tonumber(entry) then
-				entry = tonumber(entry)
+			if tonumber(tab[i]) ~= nil then
+				tab[i] = tonumber(tab[i])
 			end
 		end
 	
