@@ -213,7 +213,7 @@ local function GZGUU_fake_script() -- ScreenGui.Click
 				entry = true
 			end
 			if tonumber(entry) then
-				tonumber(entry)
+				entry = tonumber(entry)
 			end
 		end
 	
